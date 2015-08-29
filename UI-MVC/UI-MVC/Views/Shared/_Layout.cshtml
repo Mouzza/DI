@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Designit</title>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr", "~/Scripts/js")
+
+</head>
+<body>
+    <div id="menu">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="@Url.Action("Index", "Home")"><img id="logoImage" src="~/Images/logo.png"></a>
+
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="menuItem1"><a>Home</a></li>
+                        <li class="menuItem2"><a>Over ons</a></li>
+                        <li class="menuItem3"><a>Prijzen</a></li>
+                        <li class="menuItem4"><a>Contact</a></li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    @RenderBody()
+   
+
+    @*Over ons*@
+
+    <div id="overons">
+        @{Html.RenderAction("About", "Home");}
+    </div>
+
+
+    @*Prijzen*@
+
+
+    <div id="contact">
+        @{Html.RenderAction("Contact", "Home");}
+    </div>
+
+
+    @*Contact*@
+
+
+    <div id="to-top">Ga naar de Top</div>
+
+    <footer>
+        <div id="infoFooter">
+            <div id="infoContainer">
+
+                <div id="footer_box">
+                    <h3>Navigatie</h3>
+                    <ul id="footer_menu">
+                        <li class="menuItem1"><a>Home</a></li>
+                        <li class="menuItem2"><a>Over ons</a></li>
+                        <li class="menuItem3"><a>Prijzen</a></li>
+                        <li class="menuItem4"><a>Contact</a></li>
+                  
+                    </ul>
+
+                </div>
+                <div id="footer_box">
+                    <h3>Websites</h3>
+                    <ul id="footer_menu">
+                        <li><a href="" target="a">aa</a></li>
+                        <li><a href="" target="b">aa</a></li>
+                        <li><a href="" target="c">aa</a></li>
+                        <li><a href="" target="d">aa</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="copyrightFooter">
+            <div class="container">
+                <p>&copy; @DateTime.Now.Year -  Alle rechten zijn voorbehouden</p>
+            </div>
+        </div>
+    </footer>
+
+
+        @RenderSection("scripts", required: false)
+</body>
+</html>
